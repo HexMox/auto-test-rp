@@ -2,8 +2,8 @@ import { test as setup, expect } from "@playwright/test";
 import { STORAGE_STATE_FREE } from "../../playwright.config";
 
 setup("login free version account", async ({ page }) => {
-  await page.goto("/vip");
-  await page.getByRole("navigation").getByText("登录/注册").click();
+  await page.goto("/embed/user/mine");
+  // await page.getByRole("navigation").getByText("登录/注册").click();
   await page
     .frameLocator("iframe")
     .locator("div")
@@ -25,7 +25,7 @@ setup("login free version account", async ({ page }) => {
     .getByRole("button", { name: "登 录" })
     .click();
 
-  await expect(page.getByRole("main")).toContainText("免费版不升级");
+  await expect(page.locator("body")).toContainText("免费版不升级");
 
   await page.context().storageState({ path: STORAGE_STATE_FREE });
 });

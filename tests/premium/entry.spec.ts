@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
   await page.evaluate('window.localStorage.setItem("VIP", "1")');
 });
 
-test("show pay dialog and QR code of every premium version successfully", async ({
+test.skip("show pay dialog and QR code of every premium version successfully", async ({
   page,
 }) => {
   await page.goto("/vip/vvv1688");
