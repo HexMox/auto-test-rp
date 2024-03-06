@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "generate": "playwright codegen",
+    "testui": "playwright test --ui",
+    "testui:prod": "CI=1 playwright test --ui"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
